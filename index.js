@@ -36,7 +36,8 @@ inquirer.prompt([
  {
     name: "questions",
      type:"input",
-     message: "what is your contact info?",
+     message: "Add contact info?",
+     
  },
  {
     name: "license",
@@ -46,23 +47,30 @@ inquirer.prompt([
  },
 ]).then(responde => {
 console.log(responde);
-const leer = `#title ${responde.title}
+const leer = `#title: ${responde.title}
 
-1.description ${responde.description}
+1.Description ${responde.description}
 
-*installation ${responde.installation}
+*Installation ${responde.installation}
 
-*usage ${responde.usage}
+*Usage ${responde.usage}
 
-*contributing ${responde.contributing}
+*Contributing ${responde.contributing}
 
-2.test ${responde.test}
+2.Test ${responde.test}
  
- 3.[questions] ${responde.questions}
+ 3.[${responde.questions}] 
  
+
+
+
+
+
+
+
  4. license ${responde.license}`;
  
- fs.writeFile("leeme", leer, function (err){
+ fs.writeFile("ready.md", leer, function (err){
      if (err) throw err;
      console.log("creastes file");
  })

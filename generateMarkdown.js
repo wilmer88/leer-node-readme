@@ -12,3 +12,4 @@ ${licensetex}
 }
 
 module.exports = generateMarkdown;
+
